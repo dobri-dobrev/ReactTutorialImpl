@@ -1,0 +1,18 @@
+{
+  "name": "react-basic-commonjs-template",
+  "description": "A template to get you started building a ReactJS CommonJS application",
+  "main": "src/index.js",
+  "devDependencies": {
+    "browserify": "^6.3.3",
+    "envify": "^3.2.0",
+    "react": "^0.13.0",
+    "reactify": "^0.17.1",
+    "jquery": "2.1.4",
+    "watchify": "3.2.1"
+  },
+  "scripts": {
+    "build": "browserify --debug --transform reactify src/index.js > build/bundle.js",
+    "watch": "watchify -t reactify src/index.js -o build/bundle.js",
+    "start": "python -m SimpleHTTPServer"
+  }
+}
