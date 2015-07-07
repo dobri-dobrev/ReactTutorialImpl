@@ -2,30 +2,13 @@
 
 var React = require('react');
 var $ = require('jquery');
-
-
-
-var Comment = React.createClass({
-  render: function() {
-    var rawMarkup = marked(this.props.children.toString(), {sanitized: true});
-    return (
-      <div className="comment">
-        <h2 className="commentAuthor">
-          {this.props.author}
-        </h2>
-        <span dangerouslySetInnerHTML = {{__html: rawMarkup}} />
-      </div>
-      );
-  }
-});
+var Comment = require('./comment.js');
 
 var CommentList = React.createClass({
   render: function() {
-    var commentNodes = this.props.data.map( function(comment){
+    var commentNodes = this.props.data.map( function(comment, index){
       return(
-        <Comment author={comment.author}>
-          {comment.text}
-        </Comment>
+        <Comment author={comment.author} txt={comment.text} key={index}/>
       );
     });
     return (

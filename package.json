@@ -11,8 +11,8 @@
     "watchify": "3.2.1"
   },
   "scripts": {
-    "build": "browserify --debug --transform reactify src/index.js > build/bundle.js",
-    "watch": "watchify -t reactify src/index.js -o build/bundle.js",
+    "build": "browserify --debug --transform reactify src/index.js > ../stock_tracker/public/bundle.js",
+    "watch": "watchify -t reactify src/index.js -o ../stock_tracker/public/bundle.js",
     "start": "python -m SimpleHTTPServer"
   }
 }
